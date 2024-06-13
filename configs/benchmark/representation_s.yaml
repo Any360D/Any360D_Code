@@ -1,0 +1,19 @@
+test_dataset:
+  name: matterport3d
+  root_path: ./Dataset/Matterport3D/
+  list_path: ./datasets/matterport3d_test.txt
+  args:
+    height: 504
+    width: 1008
+  batch_size: 8
+  num_workers: 4
+
+midas_model_type: vits
+
+median_align: False
+
+load_weights_dir: ./checkpoints/depth_anything_vits14.pth
+
+
+
+

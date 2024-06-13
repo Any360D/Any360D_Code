@@ -1,0 +1,11 @@
+model:
+  name: student_model
+  args:
+    midas_model_type: vits
+    min_depth: 0.01
+    max_depth: 10.0
+    lora: True
+    train_decoder: False
+    btlnck_features: 64
+
+load_weights_dir: ./tmp/student_bin.pth

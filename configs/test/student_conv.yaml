@@ -1,0 +1,10 @@
+model:
+  name: student_model_conv
+  args:
+    midas_model_type: vits
+    min_depth: 0.01
+    max_depth: 10.0
+    lora: True
+    train_decoder: True
+
+load_weights_dir: ./tmp/student_conv.pth
