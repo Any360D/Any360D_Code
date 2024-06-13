@@ -11,27 +11,27 @@ After installing the packages following UniFuse and Depth Anything, we can begin
 
 1. Run a single 360 image:
 
-'''
+```
 python run_single_image.py --pred-only --img-path ./samples/360_image.jpg
-'''
+```
 
 2. Run a single 360 video:
 
-'''
+```
 python run_video.py --video-path ./samples/360_video.mp4
-'''
+```
 
 ### Reproduce the results of Table. 1 (Representation)
 
-'''
+```
 python dam_representation.py --config ./configs/benchmark/representation_s.yaml
-'''
+```
 
 ### Reproduce the results of Table. 2 (Mobius transformation)
 
-'''
+```
 python dam_mobius.py --config ./configs/benchmark/representation_s.yaml
-'''
+```
 
 Note that we put the checkpoint of Depth Anything with ViT-S backbone in the ./checkpoints. Testing other backbones requires to download manually from the Depth Anything Github.
 
