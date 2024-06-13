@@ -38,10 +38,13 @@ Note that we put the checkpoint of Depth Anything with ViT-S backbone in the ./c
 ### Reproduce the training process
 
 We provide the corresponding training code and configs. However, before training, you need to prepare the dataset firstly.
+
 1. Matterport3D dataset (You can follow UniFuse)
 2. ZInd dataset (https://github.com/zillow/zind)
 3. Download our Diverse360 dataset
+
 Then, you can begin to reproduce our training process with three stages:
+
 1. Train our teacher model;
 2. Pseudo labeling;
 3. Semi-supervision with both labeled and unlabed datasets.
