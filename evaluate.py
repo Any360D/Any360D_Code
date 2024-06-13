@@ -68,25 +68,11 @@ def main(config):
         for batch_idx, inputs in enumerate(pbar):
 
             equi_inputs = inputs["rgb"].cuda()
-
-            # from thop import profile
-            # from thop import clever_format
-            # macs, params = profile(model, inputs=(equi_inputs, cube_inputs))
-            # print(macs, params) 
-            # macs, params = clever_format([macs, params], "%.3f")
-            # print(macs, params) 
-            # assert False
             
             outputs = model(equi_inputs)
 
             pred_depth = outputs['pred_depth']
             pred_depth =pred_depth.detach().cpu()
-            # outputs = F.interpolate(outputs[None], (512, 1024), mode='bilinear', align_corners=False)
-            # depth = (depth - depth.min()) / (depth.max() - depth.min()) * 255.0
-            # depth = depth.detach().cpu().numpy().astype(np.uint8)[0, 0]
-            # print(depth.shape)
-            # depth = cv2.applyColorMap(depth, cv2.COLORMAP_INFERNO)
-            # cv2.imwrite('real_world_pred.png', depth)
 
             gt_depth = inputs["gt_depth"]
             mask = inputs["val_mask"]

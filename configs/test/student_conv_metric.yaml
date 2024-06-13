@@ -1,0 +1,31 @@
+test_dataset:
+  name: matterport3d
+  root_path: ./Dataset/Matterport3D/
+  list_path: ./datasets/matterport3d_test.txt
+  args:
+    height: 504
+    width: 1008
+    repeat: 1
+    augment_color: False
+    augment_flip: False
+    augment_rotation: False
+  batch_size: 8
+  num_workers: 4
+
+model:
+  name: student_model_conv
+  args:
+    midas_model_type: vits
+    min_depth: 0.01
+    max_depth: 10.0
+    lora: True
+    train_decoder: True
+
+median_align: False
+
+load_weights_dir: ./tmp/student_conv.pth
+
+
+
+
+

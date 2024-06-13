@@ -60,7 +60,13 @@ python label.py --config ./configs/label/zind.yaml
 3. Semi-supervision with both labeled and unlabed datasets.
 
 ```
-python train.py --config ./configs/train/conv_semi.yaml
+python semi_train.py --config ./configs/train/conv_semi.yaml
 ```
 
 We provide the checkpoints in the folder ./tmp/ of our two student models with different metric heads.
+
+You can reproduce the metric result of our student model with convolutional metric depth head through:
+
+```
+python evaluate.py --config ./configs/test/student_conv_metric.yaml
+```
