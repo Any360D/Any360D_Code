@@ -46,7 +46,21 @@ We provide the corresponding training code and configs. However, before training
 Then, you can begin to reproduce our training process with three stages:
 
 1. Train our teacher model;
+
+```
+python train.py --config ./configs/train/teacher.yaml
+```
+
 2. Pseudo labeling;
+
+```
+python label.py --config ./configs/label/zind.yaml
+```
+
 3. Semi-supervision with both labeled and unlabed datasets.
+
+```
+python train.py --config ./configs/train/conv_semi.yaml
+```
 
 We provide the checkpoints in the folder ./tmp/ of our two student models with different metric heads.

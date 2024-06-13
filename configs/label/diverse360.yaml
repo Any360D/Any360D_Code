@@ -1,0 +1,29 @@
+test_dataset:
+  name: label
+  root_path: ./Dataset/diverse360/
+  list_path: ./datasets/diverse360_outdoor.txt
+  args:
+    height: 504
+    width: 1008
+    repeat: 1
+    augment_color: False
+    augment_flip: False
+    augment_rotation: False
+  batch_size: 1
+  num_workers: 4
+
+model:
+  name: student_model
+  args:
+    midas_model_type: vitl
+    min_depth: 0.01
+    max_depth: 10.0
+    lora: True
+    train_decoder: False
+    btlnck_features: 256
+
+load_weights_dir: ./tmp/_t_large_noaug/best/
+
+
+
+
